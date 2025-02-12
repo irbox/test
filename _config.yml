@@ -1,0 +1,34 @@
+# Site settings
+title: irbox
+email: your-email@example.com
+description: "Making, teaching, writing, playing"
+baseurl: ""
+url: "https://irbox.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  tools:
+    output: true
+    permalink: /tools/:path/
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
