@@ -1,0 +1,22 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    {% for category in site.data.categories %}
+    <div class="w-full">
+        <a href="{{ category.href | relative_url }}" 
+           class="group p-8 rounded-xl bg-[size:150%] bg-gradient-to-br {{ category.background }} {{ category.hover }}
+                 transition-all duration-300 ease-out
+                 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-black/30 hover:bg-right-bottom
+                 flex flex-col h-full overflow-hidden"
+           {% if category.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            <div class="flex items-center gap-4 h-16 mb-4">
+                <span class="{{ category.icon_color }} transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <i class="{{ category.icon }} w-8 h-8"></i>
+                </span>
+                <h2 class="text-2xl font-semibold break-words">{{ category.title }}</h2>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 min-h-[3rem]">
+                {{ category.description }}
+            </p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
